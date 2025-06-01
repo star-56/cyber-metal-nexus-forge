@@ -1,11 +1,14 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Terminal as TerminalIcon } from 'lucide-react';
+import Terminal from './Terminal';
 
 const Navigation = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState('hero');
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false);
 
   const navItems = [
     { id: 'hero', label: 'HOME', icon: '◆' },
@@ -58,66 +61,86 @@ const Navigation = () => {
   };
 
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.nav
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -100, opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          className="fixed top-0 left-0 right-0 z-50 p-4"
-        >
-          <div className="max-w-7xl mx-auto">
-            <div className="glass-morphism-strong rounded-2xl p-4">
-              <div className="flex items-center justify-between">
-                {/* Logo */}
-                <motion.div
-                  className="font-orbitron text-2xl font-bold neon-text"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <span className="text-neon-blue">CYBER</span>
-                  <span className="text-neon-purple">2070</span>
-                </motion.div>
+    <>
+      <AnimatePresence>
+        {isVisible && (
+          <motion.nav
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -100, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed top-0 left-0 right-0 z-50 p-4"
+          >
+            <div className="max-w-7xl mx-auto">
+              <div className="glass-morphism-strong rounded-2xl p-4">
+                <div className="flex items-center justify-between">
+                  {/* Logo */}
+                  <motion.div
+                    className="font-orbitron text-2xl font-bold neon-text"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <span className="text-neon-blue">CYBER</span>
+                    <span className="text-neon-purple">2070</span>
+                  </motion.div>
 
-                {/* Navigation Items */}
-                <div className="hidden md:flex items-center space-x-1">
-                  {navItems.map((item) => (
+                  {/* Navigation Items */}
+                  <div className="hidden md:flex items-center space-x-1">
+                    {navItems.map((item) => (
+                      <motion.button
+                        key={item.id}
+                        onClick={() => scrollToSection(item.id)}
+                        className={`interactive px-4 py-2 rounded-lg font-tech text-sm transition-all duration-300 ${
+                          activeSection === item.id
+                            ? 'neon-glow text-neon-blue bg-neon-blue/10'
+                            : 'text-gray-300 hover:text-neon-cyan hover:bg-white/5'
+                        }`}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <span className="mr-2">{item.icon}</span>
+                        {item.label}
+                      </motion.button>
+                    ))}
+                    
+                    {/* Terminal Button */}
                     <motion.button
-                      key={item.id}
-                      onClick={() => scrollToSection(item.id)}
-                      className={`interactive px-4 py-2 rounded-lg font-tech text-sm transition-all duration-300 ${
-                        activeSection === item.id
-                          ? 'neon-glow text-neon-blue bg-neon-blue/10'
-                          : 'text-gray-300 hover:text-neon-cyan hover:bg-white/5'
-                      }`}
-                      whileHover={{ scale: 1.05 }}
+                      onClick={() => setIsTerminalOpen(true)}
+                      className="interactive px-4 py-2 rounded-lg font-tech text-sm transition-all duration-300 text-neon-green hover:text-neon-cyan hover:bg-white/5 border border-neon-green/30 hover:border-neon-cyan/50"
+                      whileHover={{ scale: 1.05, boxShadow: '0 0 20px #00ff41' }}
                       whileTap={{ scale: 0.95 }}
+                      title="Open Quantum Terminal"
                     >
-                      <span className="mr-2">{item.icon}</span>
-                      {item.label}
+                      <TerminalIcon className="w-4 h-4 mr-2 inline" />
+                      TERMINAL
                     </motion.button>
-                  ))}
-                </div>
+                  </div>
 
-                {/* Mobile Menu Button */}
-                <motion.button
-                  className="md:hidden text-neon-blue interactive"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                </motion.button>
+                  {/* Mobile Menu Button */}
+                  <motion.button
+                    className="md:hidden text-neon-blue interactive"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    </svg>
+                  </motion.button>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Neural network animation */}
-          <div className="absolute inset-0 neural-network pointer-events-none" />
-        </motion.nav>
-      )}
-    </AnimatePresence>
+            {/* Neural network animation */}
+            <div className="absolute inset-0 neural-network pointer-events-none" />
+          </motion.nav>
+        )}
+      </AnimatePresence>
+
+      {/* Terminal Component */}
+      <Terminal 
+        isOpen={isTerminalOpen} 
+        onClose={() => setIsTerminalOpen(false)} 
+      />
+    </>
   );
 };
 
