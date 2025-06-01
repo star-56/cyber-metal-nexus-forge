@@ -56,7 +56,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="hero" className="section-container relative" ref={heroRef}>
+    <section id="hero" className="section-container relative pt-32 md:pt-40" ref={heroRef}>
       {/* Background Effects */}
       <div className="absolute inset-0 bg-cyber-grid bg-cyber-grid opacity-10" />
       <div className="neural-network" />
@@ -95,8 +95,20 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
+          {/* Personal Introduction */}
+          <motion.div className="hero-subtitle mb-8">
+            <h2 className="font-rajdhani text-2xl md:text-3xl lg:text-4xl text-neon-cyan mb-4 font-bold">
+              Transforming Complex into Seamless Experiences
+            </h2>
+            <p className="font-rajdhani text-xl md:text-2xl text-gray-300">
+              Hi! I'm <span className="text-neon-purple font-bold">Lokesh</span>, a 
+              <span className="text-neon-blue"> React Developer</span> Based in 
+              <span className="text-neon-green"> India</span>
+            </p>
+          </motion.div>
+
           {/* Subtitle */}
-          <motion.p className="hero-subtitle font-rajdhani text-xl md:text-2xl lg:text-3xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+          <motion.p className="hero-subtitle font-rajdhani text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
             Immerse yourself in a <span className="text-neon-cyan">neural-enhanced</span> digital experience.
             Where <span className="text-neon-purple">innovation</span> meets <span className="text-neon-blue">technology</span>,
             and the future becomes reality.
