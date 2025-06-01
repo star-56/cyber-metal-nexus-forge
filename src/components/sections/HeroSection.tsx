@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
@@ -98,13 +97,10 @@ const HeroSection = () => {
           {/* Personal Introduction */}
           <motion.div className="hero-subtitle mb-8">
             <h2 className="font-rajdhani text-2xl md:text-3xl lg:text-4xl text-neon-cyan mb-4 font-bold">
-              Transforming Complex into Seamless Experiences
-            </h2>
-            <p className="font-rajdhani text-xl md:text-2xl text-gray-300">
               Hi! I'm <span className="text-neon-purple font-bold">Lokesh</span>, a 
               <span className="text-neon-blue"> React Developer</span> Based in 
               <span className="text-neon-green"> India</span>
-            </p>
+            </h2>
           </motion.div>
 
           {/* Subtitle */}
