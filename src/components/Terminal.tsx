@@ -93,6 +93,7 @@ const Terminal = ({ isOpen, onClose }: TerminalProps) => {
             '  matrix        - Display neural matrix status',
             '  quantum       - Check quantum entanglement status',
             '  clear         - Clear terminal',
+            '  esc           - Close terminal',
             '  exit          - Close terminal',
             '═══════════════════════════════════════════════════════',
             ''
@@ -233,6 +234,11 @@ const Terminal = ({ isOpen, onClose }: TerminalProps) => {
               inputRef.current.focus();
             }
           }, 100);
+          return;
+
+        case trimmedCmd === 'esc':
+          onClose();
+          setIsProcessing(false);
           return;
 
         case trimmedCmd === 'exit':
