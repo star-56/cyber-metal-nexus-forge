@@ -137,7 +137,7 @@ const ProjectsSection = () => {
                 <div className="mb-4">
                   <div className="flex justify-between items-start mb-2">
                     <span className="font-tech text-xs text-gray-400">
-                      PROJECT_{index + 1:03d}
+                      PROJECT_{String(index + 1).padStart(3, '0')}
                     </span>
                     <span className={`font-tech text-xs ${getStatusColor(project.status)}`}>
                       {project.status}
