@@ -150,6 +150,44 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
+    padding: 2rem 0;
+  }
+
+  /* Fix section spacing and alignment */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding: 0 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding: 0 2rem;
+    }
+  }
+
+  /* Consistent padding for all sections */
+  .section-content {
+    padding: 4rem 0;
+  }
+
+  @media (min-width: 768px) {
+    .section-content {
+      padding: 6rem 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-content {
+      padding: 8rem 0;
+    }
   }
 
   .neural-network {
@@ -185,6 +223,18 @@
       linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
       linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
+  }
+
+  /* Terminal specific styles */
+  .terminal-cursor {
+    display: inline-block;
+    background-color: #00d4ff;
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
   }
 
   @keyframes gradient-shift {
@@ -238,6 +288,39 @@
   .interactive:hover {
     transform: scale(1.02);
   }
+
+  /* Grid improvements */
+  .projects-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 768px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Text alignment fixes */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Card improvements */
+  .project-card {
+    height: 100%;
+  }
+
+  .project-card > div {
+    height: 100%;
+  }
 }
 
 /* Scrollbar Styling */
@@ -284,3 +367,6 @@
 .animate-matrix-rain {
   animation: animate-matrix-rain linear infinite;
 }
+
+/* Font face for better terminal appearance */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
