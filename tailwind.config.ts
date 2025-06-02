@@ -68,26 +68,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Futuristic colors
-				cyber: {
-					50: '#f0f9ff',
-					100: '#e0f2fe',
-					200: '#bae6fd',
-					300: '#7dd3fc',
-					400: '#38bdf8',
-					500: '#0ea5e9',
-					600: '#0284c7',
-					700: '#0369a1',
-					800: '#075985',
-					900: '#0c4a6e',
-				},
+				// Black and white theme colors
 				neon: {
-					blue: '#00d4ff',
-					cyan: '#00ffff',
-					green: '#00ff41',
-					pink: '#ff0080',
-					purple: '#8000ff',
-					yellow: '#ffff00',
+					blue: '#ffffff',
+					cyan: '#f5f5f5',
+					green: '#e5e5e5',
+					pink: '#d5d5d5',
+					purple: '#c5c5c5',
+					yellow: '#b5b5b5',
 				}
 			},
 			borderRadius: {
@@ -114,10 +102,10 @@ export default {
 				},
 				'glow-pulse': {
 					'0%, 100%': {
-						boxShadow: '0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 60px #00d4ff'
+						boxShadow: '0 0 20px #ffffff, 0 0 40px #ffffff, 0 0 60px #ffffff'
 					},
 					'50%': {
-						boxShadow: '0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 30px #00d4ff'
+						boxShadow: '0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff'
 					}
 				},
 				'matrix-rain': {
@@ -148,8 +136,8 @@ export default {
 				'flicker': 'flicker 2s ease-in-out infinite'
 			},
 			backgroundImage: {
-				'cyber-grid': 'linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px)',
-				'neural-net': 'radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(128, 0, 255, 0.3) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(0, 255, 65, 0.3) 0%, transparent 50%)'
+				'cyber-grid': 'linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)',
+				'neural-net': 'radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(200, 200, 200, 0.3) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(150, 150, 150, 0.3) 0%, transparent 50%)'
 			},
 			backgroundSize: {
 				'cyber-grid': '50px 50px'
