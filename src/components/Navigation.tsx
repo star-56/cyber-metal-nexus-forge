@@ -76,11 +76,11 @@ const Navigation = () => {
                 <div className="flex items-center justify-between">
                   {/* Logo */}
                   <motion.div
-                    className="font-orbitron text-2xl font-bold neon-text"
+                    className="font-orbitron text-2xl font-bold neon-text-soft"
                     whileHover={{ scale: 1.05 }}
                   >
-                    <span className="text-neon-blue">CYBER</span>
-                    <span className="text-neon-purple">2070</span>
+                    <span className="text-neon-green">Loki</span>
+                    <span className="text-neon-cyan">/E</span>
                   </motion.div>
 
                   {/* Navigation Items */}
@@ -91,8 +91,8 @@ const Navigation = () => {
                         onClick={() => scrollToSection(item.id)}
                         className={`interactive px-4 py-2 rounded-lg font-tech text-sm transition-all duration-300 ${
                           activeSection === item.id
-                            ? 'neon-glow text-neon-blue bg-neon-blue/10'
-                            : 'text-gray-300 hover:text-neon-cyan hover:bg-white/5'
+                            ? 'neon-glow-soft text-neon-green bg-neon-green/10'
+                            : 'text-gray-300 hover:text-neon-green hover:bg-white/5'
                         }`}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -106,7 +106,7 @@ const Navigation = () => {
                     <motion.button
                       onClick={() => setIsTerminalOpen(true)}
                       className="interactive px-4 py-2 rounded-lg font-tech text-sm transition-all duration-300 text-neon-green hover:text-neon-cyan hover:bg-white/5 border border-neon-green/30 hover:border-neon-cyan/50"
-                      whileHover={{ scale: 1.05, boxShadow: '0 0 20px #00ff41' }}
+                      whileHover={{ scale: 1.05, boxShadow: '0 0 15px #00ff00' }}
                       whileTap={{ scale: 0.95 }}
                       title="Open Quantum Terminal"
                     >
@@ -117,7 +117,7 @@ const Navigation = () => {
 
                   {/* Mobile Menu Button */}
                   <motion.button
-                    className="md:hidden text-neon-blue interactive"
+                    className="md:hidden text-neon-green interactive"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >

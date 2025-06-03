@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
@@ -65,11 +66,11 @@ const HeroSection = () => {
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="particle absolute w-2 h-2 bg-neon-blue rounded-full opacity-30"
+            className="particle absolute w-2 h-2 bg-neon-green rounded-full opacity-30"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              boxShadow: '0 0 10px #00d4ff',
+              boxShadow: '0 0 6px #00ff00',
             }}
           />
         ))}
@@ -81,8 +82,8 @@ const HeroSection = () => {
           {/* Main Title */}
           <motion.div className="mb-8">
             <h1 className="hero-title font-orbitron text-6xl md:text-8xl lg:text-9xl font-black mb-4">
-              <span className="block neon-text text-neon-blue">WELCOME</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-cyan">
+              <span className="block neon-text-soft text-neon-green">WELCOME</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-neon-cyan">
                 TO 2070
               </span>
             </h1>
@@ -96,60 +97,60 @@ const HeroSection = () => {
 
           {/* Personal Introduction */}
           <motion.div className="hero-subtitle mb-8">
-            <h2 className="font-rajdhani text-2xl md:text-3xl lg:text-4xl text-neon-cyan mb-4 font-bold">
-              Hi! I'm <span className="text-neon-purple font-bold">Lokesh</span>, a 
-              <span className="text-neon-blue"> React Developer</span> Based in 
-              <span className="text-neon-green"> India</span>
+            <h2 className="font-rajdhani text-2xl md:text-3xl lg:text-4xl text-neon-green mb-4 font-bold">
+              Hi! I'm <span className="text-neon-cyan font-bold">Lokesh</span>, a 
+              <span className="text-neon-green"> React Developer</span> Based in 
+              <span className="text-neon-cyan"> India</span>
             </h2>
           </motion.div>
 
           {/* Subtitle */}
-          <motion.p className="hero-subtitle font-rajdhani text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+          <motion.p className="hero-subtitle font-rajdhani text-lg md:text-xl lg:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
             Immerse yourself in a <span className="text-neon-cyan">neural-enhanced</span> digital experience.
-            Where <span className="text-neon-purple">innovation</span> meets <span className="text-neon-blue">technology</span>,
+            Where <span className="text-neon-green">innovation</span> meets <span className="text-neon-cyan">technology</span>,
             and the future becomes reality.
           </motion.p>
 
           {/* CTA Buttons */}
-          <motion.div className="hero-cta flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <motion.div className="hero-cta flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
             <motion.button
-              className="interactive glass-morphism-strong px-8 py-4 rounded-xl font-tech text-lg cyber-border neon-glow hover:scale-105 transition-all duration-300"
+              className="interactive glass-morphism-strong px-8 py-4 rounded-xl font-tech text-lg cyber-border neon-glow-soft hover:scale-105 transition-all duration-300"
               whileHover={{ 
-                boxShadow: '0 0 30px #00d4ff',
+                boxShadow: '0 0 20px #00ff00',
                 y: -5 
               }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="text-neon-blue">&gt;</span> ENTER_MATRIX
+              <span className="text-neon-green">&gt;</span> ENTER_MATRIX
             </motion.button>
             
             <motion.button
-              className="interactive glass-morphism px-8 py-4 rounded-xl font-tech text-lg border border-neon-purple/30 hover:border-neon-purple hover:scale-105 transition-all duration-300"
+              className="interactive glass-morphism px-8 py-4 rounded-xl font-tech text-lg border border-neon-green/30 hover:border-neon-green hover:scale-105 transition-all duration-300"
               whileHover={{ 
-                boxShadow: '0 0 20px #8000ff',
+                boxShadow: '0 0 15px #00ff00',
                 y: -5 
               }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="text-neon-purple">◇</span> VIEW_PROTOCOLS
+              <span className="text-neon-cyan">◇</span> VIEW_PROTOCOLS
             </motion.button>
           </motion.div>
 
-          {/* Status Indicators */}
+          {/* Status Indicators - Fixed positioning to avoid overlap */}
           <motion.div 
-            className="mt-12 flex justify-center space-x-8"
+            className="mt-8 flex justify-center space-x-8 relative z-20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2 }}
           >
             {[
               { label: 'SYSTEM_STATUS', value: 'ONLINE', color: 'text-neon-green' },
-              { label: 'NEURAL_LINK', value: 'ACTIVE', color: 'text-neon-blue' },
-              { label: 'FIREWALL', value: 'SECURED', color: 'text-neon-purple' },
+              { label: 'NEURAL_LINK', value: 'ACTIVE', color: 'text-neon-cyan' },
+              { label: 'FIREWALL', value: 'SECURED', color: 'text-neon-green' },
             ].map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="font-tech text-xs text-gray-500 mb-1">{item.label}</div>
-                <div className={`font-tech text-sm ${item.color} animate-flicker`}>
+              <div key={index} className="text-center bg-black/50 p-2 rounded-lg backdrop-blur-sm">
+                <div className="font-tech text-xs text-gray-400 mb-1">{item.label}</div>
+                <div className={`font-tech text-sm ${item.color} animate-flicker font-bold`}>
                   {item.value}
                 </div>
               </div>
@@ -165,8 +166,8 @@ const HeroSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2.5, repeat: Infinity, repeatType: 'reverse', duration: 1 }}
       >
-        <div className="w-6 h-10 border-2 border-neon-cyan rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-neon-cyan rounded-full mt-2 animate-bounce" />
+        <div className="w-6 h-10 border-2 border-neon-green rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-neon-green rounded-full mt-2 animate-bounce" />
         </div>
       </motion.div>
 

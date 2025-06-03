@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -70,12 +69,12 @@ export default {
 				},
 				// Black and white theme colors
 				neon: {
-					blue: '#ffffff',
-					cyan: '#f5f5f5',
-					green: '#e5e5e5',
-					pink: '#d5d5d5',
-					purple: '#c5c5c5',
-					yellow: '#b5b5b5',
+					blue: '#00ff00',
+					cyan: '#00dd00',
+					green: '#00ff00',
+					pink: '#00cc00',
+					purple: '#009900',
+					yellow: '#00bb00',
 				}
 			},
 			borderRadius: {
